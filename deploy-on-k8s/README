@@ -1,0 +1,14 @@
+restapi
+
+curl http://localhost:30729/api/2.0/preview/mlflow/experiments/list
+{
+  "experiments": [
+    {
+      "experiment_id": "0",
+      "name": "Default",
+      "artifact_location": "s3://mlflow/0",
+      "lifecycle_stage": "active"
+    }
+  ]
+}
+
