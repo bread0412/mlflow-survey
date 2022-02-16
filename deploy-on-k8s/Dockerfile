@@ -1,8 +1,8 @@
 FROM python:3.8.2-slim
 
-RUN pip install mlflow[extras]==1.9.1 && \
-    pip install psycopg2-binary==2.8.5 && \
-    pip install boto3==1.15.16
+RUN pip install mlflow==1.21.0 && \
+    pip install psycopg2-binary && \
+    pip install boto3
 
 RUN mkdir /mnt/mlruns/
 RUN chmod 777 -R /mnt/mlruns/

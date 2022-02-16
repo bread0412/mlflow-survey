@@ -7,10 +7,16 @@ from sklearn.linear_model import ElasticNet
 import mlflow
 import mlflow.sklearn
 
-mlflow.set_tracking_uri('http://localhost:30729')
-os.environ['MLFLOW_S3_ENDPOINT_URL'] = 'http://localhost:30402'
+# 設置 mlflow address
+mlflow.set_tracking_uri('http://localhost:30986')
+# 設置 minio endpoint
+os.environ['MLFLOW_S3_ENDPOINT_URL'] = 'http://localhost:32197'
 os.environ['AWS_ACCESS_KEY_ID'] = 'minio'
 os.environ['AWS_SECRET_ACCESS_KEY'] = 'minio123'
+
+# 或許可以by專案名稱
+mlflow.set_experiment("hr-resume-selector")
+
 
 df_wine = pd.read_csv('./train.csv')
 X = df_wine.drop(columns = 'quality')

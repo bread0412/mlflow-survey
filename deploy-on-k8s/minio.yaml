@@ -41,6 +41,7 @@ spec:
   ports:
   - port: 9000
     targetPort: 9000
+    nodePort: 32197
     protocol: TCP
   selector:
     app: mlflow-minio
